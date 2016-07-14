@@ -1,5 +1,7 @@
 package com.netease.constant.var;
 
+import java.io.File;
+
 public class constVar {
 	
 	public static final String ftlPath = "E://Program Files (x86)/workspace/final-web/src/main/webapp/template";

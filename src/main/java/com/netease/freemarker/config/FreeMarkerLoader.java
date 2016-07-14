@@ -27,7 +27,7 @@ public class FreeMarkerLoader {
 			throws IOException, TemplateException {
 		
 		Configuration configuration = new Configuration(Configuration.VERSION_2_3_23);
-		configuration.setDirectoryForTemplateLoading(new File(constVar.ftlPath));
+		configuration.setDirectoryForTemplateLoading(new File(request.getSession().getServletContext().getRealPath("/")+"template"+File.separator));
 		configuration.setDefaultEncoding("UTF-8");
 		configuration.setTemplateExceptionHandler(TemplateExceptionHandler.RETHROW_HANDLER);
 		Template fTemplate = configuration.getTemplate(ftlName);
