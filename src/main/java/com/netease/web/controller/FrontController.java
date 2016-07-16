@@ -198,7 +198,7 @@ public class FrontController {
 	public void Show(HttpServletRequest request, HttpServletResponse response) throws IOException, TemplateException {
 		int userType = p.getUsertype();
 		int productId = Integer.valueOf(request.getParameter("id"));
-		Product product;
+		Product product=null;
 		if (userType != -1) {
 			Boolean condition = Detector.getProductCondition(productId);
 			if (condition) {
@@ -211,8 +211,10 @@ public class FrontController {
 			} else {
 				product.setIsSell(condition);
 			}
-			request.setAttribute("product", product);
+		}else{
+			product = Detector.getProduct(productId);
 		}
+		request.setAttribute("product", product);
 		FreeMarkerLoader.resolveTemplate(request, response, constVar.showFtl, p);
 	}
 
