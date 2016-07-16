@@ -107,20 +107,19 @@
 		</dependency>
 	</dependencies>
 	<build>
-	
-		<finalName>final-web</finalName>
-		<plugins>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-compiler-plugin</artifactId>
-				<configuration>
-					<source>1.7</source>
-					<target>1.7</target>
-					<encoding>UTF-8</encoding>
-					<showWarnings>false</showWarnings>
-					<showDeprecation>false</showDeprecation>
-				</configuration>
-			</plugin>
-		</plugins>
-	</build>
+	<defaultGoal>compile</defaultGoal>
+	<plugins>
+		<plugin>
+			<groupId>org.apache.maven.plugins</groupId>
+			<artifactId>maven-compiler-plugin</artifactId>
+			<configuration>
+				<source>1.6</source>
+				<target>1.6</target>
+				<encoding>UTF-8</encoding>
+				<showWarnings>false</showWarnings>
+				<showDeprecation>false</showDeprecation>
+			</configuration>
+		</plugin>
+	</plugins>
+</build>
 </project>

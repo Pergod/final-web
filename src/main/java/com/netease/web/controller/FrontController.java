@@ -104,16 +104,16 @@ public class FrontController {
 		p.setUsername(userName);
 		p.setPassword(password);
 		p.setUsertype(type);
+		
+		map.addAttribute("user", p);
 
-		map.addAttribute("userName", userName);
-		map.addAttribute("password", password);
-
-		response.setContentType("application/x-www-form-urlencoded");
 		if (type == 1 || type == 0) {
 			map.addAttribute("code", 200);
 			map.addAttribute("result", true);
+			map.addAttribute("message", "登录成功");
 		} else {
 			map.addAttribute("code", 500);
+			map.addAttribute("result", false);
 			map.addAttribute("message", "用户名或密码错误");
 		}
 		return map;

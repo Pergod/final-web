@@ -37,7 +37,7 @@ public class FreeMarkerLoader {
 		map.put("productList", request.getAttribute("productList"));
 		
 		if ((p.getUsername()==null||p.getPassword()==null)) {
-			fTemplate.process(null, out);
+			fTemplate.process(map, out);
 		}else{
 			map.put("user", p);
 			if (ftlName.equals(constVar.showFtl)||ftlName.equals(constVar.publicSubmitFtl)||ftlName.equals(constVar.editFtl)||ftlName.equals(constVar.editSubmitFtl)) {
